@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.ServerDAO">
+  <resultMap id="BaseResultMap" type="com.demo.domain.Server">
+    <id column="ServerCode" jdbcType="INTEGER" property="serverCode" />
+    <result column="ServerName" jdbcType="VARCHAR" property="serverName" />
+    <result column="AreaCode" jdbcType="INTEGER" property="areaCode" />
+    <result column="AreaName" jdbcType="VARCHAR" property="areaName" />
+    <result column="ServerIP" jdbcType="VARCHAR" property="serverIP" />
+    <result column="ServerPort" jdbcType="INTEGER" property="serverPort" />
+    <result column="IsOpen" jdbcType="VARCHAR" property="isOpen" />
+    <result column="IsNormally" jdbcType="VARCHAR" property="isNormally" />
+    <result column="IsGetVersionNormally" jdbcType="VARCHAR" property="isGetVersionNormally" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ServerCode, ServerName, AreaCode, AreaName, ServerIP, ServerPort, IsOpen, IsNormally, 
+    IsGetVersionNormally
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from server
+    where ServerCode = #{serverCode,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from server
+    where ServerCode = #{serverCode,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.demo.domain.Server">
+    insert into server (ServerCode, ServerName, AreaCode, 
+      AreaName, ServerIP, ServerPort, 
+      IsOpen, IsNormally, IsGetVersionNormally
+      )
+    values (#{serverCode,jdbcType=INTEGER}, #{serverName,jdbcType=VARCHAR}, #{areaCode,jdbcType=INTEGER}, 
+      #{areaName,jdbcType=VARCHAR}, #{serverIP,jdbcType=VARCHAR}, #{serverPort,jdbcType=INTEGER}, 
+      #{isOpen,jdbcType=VARCHAR}, #{isNormally,jdbcType=VARCHAR}, #{isGetVersionNormally,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.demo.domain.Server">
+    insert into server
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="serverCode != null">
+        ServerCode,
+      </if>
+      <if test="serverName != null">
+        ServerName,
+      </if>
+      <if test="areaCode != null">
+        AreaCode,
+      </if>
+      <if test="areaName != null">
+        AreaName,
+      </if>
+      <if test="serverIP != null">
+        ServerIP,
+      </if>
+      <if test="serverPort != null">
+        ServerPort,
+      </if>
+      <if test="isOpen != null">
+        IsOpen,
+      </if>
+      <if test="isNormally != null">
+        IsNormally,
+      </if>
+      <if test="isGetVersionNormally != null">
+        IsGetVersionNormally,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="serverCode != null">
+        #{serverCode,jdbcType=INTEGER},
+      </if>
+      <if test="serverName != null">
+        #{serverName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null">
+        #{areaCode,jdbcType=INTEGER},
+      </if>
+      <if test="areaName != null">
+        #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="serverIP != null">
+        #{serverIP,jdbcType=VARCHAR},
+      </if>
+      <if test="serverPort != null">
+        #{serverPort,jdbcType=INTEGER},
+      </if>
+      <if test="isOpen != null">
+        #{isOpen,jdbcType=VARCHAR},
+      </if>
+      <if test="isNormally != null">
+        #{isNormally,jdbcType=VARCHAR},
+      </if>
+      <if test="isGetVersionNormally != null">
+        #{isGetVersionNormally,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.domain.Server">
+    update server
+    <set>
+      <if test="serverName != null">
+        ServerName = #{serverName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null">
+        AreaCode = #{areaCode,jdbcType=INTEGER},
+      </if>
+      <if test="areaName != null">
+        AreaName = #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="serverIP != null">
+        ServerIP = #{serverIP,jdbcType=VARCHAR},
+      </if>
+      <if test="serverPort != null">
+        ServerPort = #{serverPort,jdbcType=INTEGER},
+      </if>
+      <if test="isOpen != null">
+        IsOpen = #{isOpen,jdbcType=VARCHAR},
+      </if>
+      <if test="isNormally != null">
+        IsNormally = #{isNormally,jdbcType=VARCHAR},
+      </if>
+      <if test="isGetVersionNormally != null">
+        IsGetVersionNormally = #{isGetVersionNormally,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ServerCode = #{serverCode,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.demo.domain.Server">
+    update server
+    set ServerName = #{serverName,jdbcType=VARCHAR},
+      AreaCode = #{areaCode,jdbcType=INTEGER},
+      AreaName = #{areaName,jdbcType=VARCHAR},
+      ServerIP = #{serverIP,jdbcType=VARCHAR},
+      ServerPort = #{serverPort,jdbcType=INTEGER},
+      IsOpen = #{isOpen,jdbcType=VARCHAR},
+      IsNormally = #{isNormally,jdbcType=VARCHAR},
+      IsGetVersionNormally = #{isGetVersionNormally,jdbcType=VARCHAR}
+    where ServerCode = #{serverCode,jdbcType=INTEGER}
+  </update>
+</mapper>
