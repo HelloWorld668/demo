@@ -33,8 +33,10 @@ public class ChacterTypeUtil {
                 return "varchar(256)";
             }
             
+        }else{
+            return "varchar(16)";
         }
-        logger.error("error type");
+        System.out.println("error type"+s);
         
         return s;
     }
