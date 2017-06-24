@@ -11,9 +11,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {"classpath*:/spring/*.xml" })
 public class ServerDAOTest {
     @Resource
-    TestMapper testMapper;
+    ServerDAO serverDAO;
     @Test
     public void test(){
-        System.out.println(testMapper.selectByPrimaryKey(1));
+        System.out.println(serverDAO.selectAll());
     }
 }

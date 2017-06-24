@@ -1,5 +1,7 @@
 package com.demo.dao;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.demo.domain.Server;
@@ -16,4 +18,6 @@ public interface ServerDAO {
     int updateByPrimaryKeySelective(Server record);
 
     int updateByPrimaryKey(Server record);
+    
+    List<Server> selectAll();    
 }

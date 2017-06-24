@@ -219,3 +219,5 @@ pip-log.txt
 *.class
 *.class
 *.class
+logs/ssm.log.1
+src/main/generatorConfig.xml

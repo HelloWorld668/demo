@@ -1,0 +1,1029 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.RoleDAO">
+  <resultMap id="BaseResultMap" type="com.demo.domain.Role">
+    <id column="Icon" jdbcType="INTEGER" property="icon" />
+    <result column="UpgradeImmortal" jdbcType="INTEGER" property="upgradeImmortal" />
+    <result column="UpgradeMagic" jdbcType="INTEGER" property="upgradeMagic" />
+    <result column="Tao" jdbcType="INTEGER" property="tao" />
+    <result column="DecimalTao" jdbcType="DOUBLE" property="decimalTao" />
+    <result column="TaoHtmlHelper" jdbcType="VARCHAR" property="taoHtmlHelper" />
+    <result column="Con" jdbcType="INTEGER" property="con" />
+    <result column="ConHtmlHelper" jdbcType="INTEGER" property="conHtmlHelper" />
+    <result column="Wiz" jdbcType="INTEGER" property="wiz" />
+    <result column="WizHtmlHelper" jdbcType="INTEGER" property="wizHtmlHelper" />
+    <result column="Str" jdbcType="INTEGER" property="str" />
+    <result column="StrHtmlHelper" jdbcType="INTEGER" property="strHtmlHelper" />
+    <result column="Dex" jdbcType="INTEGER" property="dex" />
+    <result column="DexHtmlHelper" jdbcType="INTEGER" property="dexHtmlHelper" />
+    <result column="ServerCode" jdbcType="INTEGER" property="serverCode" />
+    <result column="ServerName" jdbcType="VARCHAR" property="serverName" />
+    <result column="AreaCode" jdbcType="INTEGER" property="areaCode" />
+    <result column="AreaName" jdbcType="VARCHAR" property="areaName" />
+    <result column="ItemName" jdbcType="VARCHAR" property="itemName" />
+    <result column="ItemNameNum" jdbcType="VARCHAR" property="itemNameNum" />
+    <result column="ItemNameColor" jdbcType="VARCHAR" property="itemNameColor" />
+    <result column="SaleAccount" jdbcType="VARCHAR" property="saleAccount" />
+    <result column="SaleRoelId" jdbcType="VARCHAR" property="saleRoelId" />
+    <result column="GameItemCode" jdbcType="VARCHAR" property="gameItemCode" />
+    <result column="SaleRoleName" jdbcType="VARCHAR" property="saleRoleName" />
+    <result column="ItemTypeId" jdbcType="INTEGER" property="itemTypeId" />
+    <result column="ItemTypeIdThree" jdbcType="INTEGER" property="itemTypeIdThree" />
+    <result column="ItemTypeName" jdbcType="VARCHAR" property="itemTypeName" />
+    <result column="ItemTypeP1Name" jdbcType="VARCHAR" property="itemTypeP1Name" />
+    <result column="ItemXml" jdbcType="VARCHAR" property="itemXml" />
+    <result column="ItemState" jdbcType="VARCHAR" property="itemState" />
+    <result column="ItemStateDesc" jdbcType="VARCHAR" property="itemStateDesc" />
+    <result column="ItemPreState" jdbcType="VARCHAR" property="itemPreState" />
+    <result column="ItemImage" jdbcType="VARCHAR" property="itemImage" />
+    <result column="ItemLevel" jdbcType="INTEGER" property="itemLevel" />
+    <result column="SalePriceStyle" jdbcType="VARCHAR" property="salePriceStyle" />
+    <result column="QBCookieValue" jdbcType="VARCHAR" property="QBCookieValue" />
+    <result column="BtnPic" jdbcType="VARCHAR" property="btnPic" />
+    <result column="UnitPrice" jdbcType="VARCHAR" property="unitPrice" />
+    <result column="UnitPriceInt" jdbcType="INTEGER" property="unitPriceInt" />
+    <result column="Oprate" jdbcType="INTEGER" property="oprate" />
+    <result column="OprateHtml" jdbcType="VARCHAR" property="oprateHtml" />
+    <result column="PriceColorHtml" jdbcType="VARCHAR" property="priceColorHtml" />
+    <result column="CurrentStateName" jdbcType="VARCHAR" property="currentStateName" />
+    <result column="OriginalStateName" jdbcType="VARCHAR" property="originalStateName" />
+    <result column="ItemImageName" jdbcType="VARCHAR" property="itemImageName" />
+    <result column="PaymentDate" jdbcType="VARCHAR" property="paymentDate" />
+    <result column="ShowPaymentDate" jdbcType="VARCHAR" property="showPaymentDate" />
+    <result column="OrderState" jdbcType="VARCHAR" property="orderState" />
+    <result column="GpayOrderCode" jdbcType="VARCHAR" property="gpayOrderCode" />
+    <result column="ItemOrderCode" jdbcType="INTEGER" property="itemOrderCode" />
+    <result column="CurrentState" jdbcType="VARCHAR" property="currentState" />
+    <result column="StateName" jdbcType="VARCHAR" property="stateName" />
+    <result column="ItemInfoCode" jdbcType="INTEGER" property="itemInfoCode" />
+    <result column="CurrentItemPrice" jdbcType="DOUBLE" property="currentItemPrice" />
+    <result column="OldReservePrice" jdbcType="INTEGER" property="oldReservePrice" />
+    <result column="NewReservePrice" jdbcType="INTEGER" property="newReservePrice" />
+    <result column="ShowItemPrice" jdbcType="VARCHAR" property="showItemPrice" />
+    <result column="ShowNewReservePrice" jdbcType="VARCHAR" property="showNewReservePrice" />
+    <result column="ShowOldReservePrice" jdbcType="VARCHAR" property="showOldReservePrice" />
+    <result column="PublicStartDate" jdbcType="VARCHAR" property="publicStartDate" />
+    <result column="ShowPublicStartDate" jdbcType="VARCHAR" property="showPublicStartDate" />
+    <result column="BusinessStartDate" jdbcType="VARCHAR" property="businessStartDate" />
+    <result column="ShowBusinessStarDate" jdbcType="VARCHAR" property="showBusinessStarDate" />
+    <result column="BusinessEndDate" jdbcType="VARCHAR" property="businessEndDate" />
+    <result column="BulletinStartDate" jdbcType="VARCHAR" property="bulletinStartDate" />
+    <result column="ShowBusinessEndDate" jdbcType="VARCHAR" property="showBusinessEndDate" />
+    <result column="OriginalPrice" jdbcType="INTEGER" property="originalPrice" />
+    <result column="ShowOriginalPrice" jdbcType="VARCHAR" property="showOriginalPrice" />
+    <result column="MakeCount" jdbcType="INTEGER" property="makeCount" />
+    <result column="IsLock" jdbcType="VARCHAR" property="isLock" />
+    <result column="IsPause" jdbcType="VARCHAR" property="isPause" />
+    <result column="BusinessValidDate" jdbcType="VARCHAR" property="businessValidDate" />
+    <result column="PublicEndDate" jdbcType="VARCHAR" property="publicEndDate" />
+    <result column="PublicvalidDate" jdbcType="VARCHAR" property="publicvalidDate" />
+    <result column="AppointRoleId" jdbcType="VARCHAR" property="appointRoleId" />
+    <result column="SaleMethod" jdbcType="INTEGER" property="saleMethod" />
+    <result column="HighestPrice" jdbcType="INTEGER" property="highestPrice" />
+    <result column="CouponsCode" jdbcType="INTEGER" property="couponsCode" />
+    <result column="CallCount" jdbcType="INTEGER" property="callCount" />
+    <result column="NextCallTime" jdbcType="VARCHAR" property="nextCallTime" />
+    <result column="UpdateLockTime" jdbcType="VARCHAR" property="updateLockTime" />
+    <result column="GmtCreate" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="GmtUpdate" jdbcType="TIMESTAMP" property="gmtUpdate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    Icon, UpgradeImmortal, UpgradeMagic, Tao, DecimalTao, TaoHtmlHelper, Con, ConHtmlHelper, 
+    Wiz, WizHtmlHelper, Str, StrHtmlHelper, Dex, DexHtmlHelper, ServerCode, ServerName, 
+    AreaCode, AreaName, ItemName, ItemNameNum, ItemNameColor, SaleAccount, SaleRoelId, 
+    GameItemCode, SaleRoleName, ItemTypeId, ItemTypeIdThree, ItemTypeName, ItemTypeP1Name, 
+    ItemXml, ItemState, ItemStateDesc, ItemPreState, ItemImage, ItemLevel, SalePriceStyle, 
+    QBCookieValue, BtnPic, UnitPrice, UnitPriceInt, Oprate, OprateHtml, PriceColorHtml, 
+    CurrentStateName, OriginalStateName, ItemImageName, PaymentDate, ShowPaymentDate, 
+    OrderState, GpayOrderCode, ItemOrderCode, CurrentState, StateName, ItemInfoCode, 
+    CurrentItemPrice, OldReservePrice, NewReservePrice, ShowItemPrice, ShowNewReservePrice, 
+    ShowOldReservePrice, PublicStartDate, ShowPublicStartDate, BusinessStartDate, ShowBusinessStarDate, 
+    BusinessEndDate, BulletinStartDate, ShowBusinessEndDate, OriginalPrice, ShowOriginalPrice, 
+    MakeCount, IsLock, IsPause, BusinessValidDate, PublicEndDate, PublicvalidDate, AppointRoleId, 
+    SaleMethod, HighestPrice, CouponsCode, CallCount, NextCallTime, UpdateLockTime, GmtCreate, 
+    GmtUpdate
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from role
+    where Icon = #{icon,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from role
+    where Icon = #{icon,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.demo.domain.Role">
+    insert into role (Icon, UpgradeImmortal, UpgradeMagic, 
+      Tao, DecimalTao, TaoHtmlHelper, 
+      Con, ConHtmlHelper, Wiz, 
+      WizHtmlHelper, Str, StrHtmlHelper, 
+      Dex, DexHtmlHelper, ServerCode, 
+      ServerName, AreaCode, AreaName, 
+      ItemName, ItemNameNum, ItemNameColor, 
+      SaleAccount, SaleRoelId, GameItemCode, 
+      SaleRoleName, ItemTypeId, ItemTypeIdThree, 
+      ItemTypeName, ItemTypeP1Name, ItemXml, 
+      ItemState, ItemStateDesc, ItemPreState, 
+      ItemImage, ItemLevel, SalePriceStyle, 
+      QBCookieValue, BtnPic, UnitPrice, 
+      UnitPriceInt, Oprate, OprateHtml, 
+      PriceColorHtml, CurrentStateName, OriginalStateName, 
+      ItemImageName, PaymentDate, ShowPaymentDate, 
+      OrderState, GpayOrderCode, ItemOrderCode, 
+      CurrentState, StateName, ItemInfoCode, 
+      CurrentItemPrice, OldReservePrice, NewReservePrice, 
+      ShowItemPrice, ShowNewReservePrice, ShowOldReservePrice, 
+      PublicStartDate, ShowPublicStartDate, BusinessStartDate, 
+      ShowBusinessStarDate, BusinessEndDate, 
+      BulletinStartDate, ShowBusinessEndDate, 
+      OriginalPrice, ShowOriginalPrice, MakeCount, 
+      IsLock, IsPause, BusinessValidDate, 
+      PublicEndDate, PublicvalidDate, AppointRoleId, 
+      SaleMethod, HighestPrice, CouponsCode, 
+      CallCount, NextCallTime, UpdateLockTime, 
+      GmtCreate, GmtUpdate)
+    values (#{icon,jdbcType=INTEGER}, #{upgradeImmortal,jdbcType=INTEGER}, #{upgradeMagic,jdbcType=INTEGER}, 
+      #{tao,jdbcType=INTEGER}, #{decimalTao,jdbcType=DOUBLE}, #{taoHtmlHelper,jdbcType=VARCHAR}, 
+      #{con,jdbcType=INTEGER}, #{conHtmlHelper,jdbcType=INTEGER}, #{wiz,jdbcType=INTEGER}, 
+      #{wizHtmlHelper,jdbcType=INTEGER}, #{str,jdbcType=INTEGER}, #{strHtmlHelper,jdbcType=INTEGER}, 
+      #{dex,jdbcType=INTEGER}, #{dexHtmlHelper,jdbcType=INTEGER}, #{serverCode,jdbcType=INTEGER}, 
+      #{serverName,jdbcType=VARCHAR}, #{areaCode,jdbcType=INTEGER}, #{areaName,jdbcType=VARCHAR}, 
+      #{itemName,jdbcType=VARCHAR}, #{itemNameNum,jdbcType=VARCHAR}, #{itemNameColor,jdbcType=VARCHAR}, 
+      #{saleAccount,jdbcType=VARCHAR}, #{saleRoelId,jdbcType=VARCHAR}, #{gameItemCode,jdbcType=VARCHAR}, 
+      #{saleRoleName,jdbcType=VARCHAR}, #{itemTypeId,jdbcType=INTEGER}, #{itemTypeIdThree,jdbcType=INTEGER}, 
+      #{itemTypeName,jdbcType=VARCHAR}, #{itemTypeP1Name,jdbcType=VARCHAR}, #{itemXml,jdbcType=VARCHAR}, 
+      #{itemState,jdbcType=VARCHAR}, #{itemStateDesc,jdbcType=VARCHAR}, #{itemPreState,jdbcType=VARCHAR}, 
+      #{itemImage,jdbcType=VARCHAR}, #{itemLevel,jdbcType=INTEGER}, #{salePriceStyle,jdbcType=VARCHAR}, 
+      #{QBCookieValue,jdbcType=VARCHAR}, #{btnPic,jdbcType=VARCHAR}, #{unitPrice,jdbcType=VARCHAR}, 
+      #{unitPriceInt,jdbcType=INTEGER}, #{oprate,jdbcType=INTEGER}, #{oprateHtml,jdbcType=VARCHAR}, 
+      #{priceColorHtml,jdbcType=VARCHAR}, #{currentStateName,jdbcType=VARCHAR}, #{originalStateName,jdbcType=VARCHAR}, 
+      #{itemImageName,jdbcType=VARCHAR}, #{paymentDate,jdbcType=VARCHAR}, #{showPaymentDate,jdbcType=VARCHAR}, 
+      #{orderState,jdbcType=VARCHAR}, #{gpayOrderCode,jdbcType=VARCHAR}, #{itemOrderCode,jdbcType=INTEGER}, 
+      #{currentState,jdbcType=VARCHAR}, #{stateName,jdbcType=VARCHAR}, #{itemInfoCode,jdbcType=INTEGER}, 
+      #{currentItemPrice,jdbcType=DOUBLE}, #{oldReservePrice,jdbcType=INTEGER}, #{newReservePrice,jdbcType=INTEGER}, 
+      #{showItemPrice,jdbcType=VARCHAR}, #{showNewReservePrice,jdbcType=VARCHAR}, #{showOldReservePrice,jdbcType=VARCHAR}, 
+      #{publicStartDate,jdbcType=VARCHAR}, #{showPublicStartDate,jdbcType=VARCHAR}, #{businessStartDate,jdbcType=VARCHAR}, 
+      #{showBusinessStarDate,jdbcType=VARCHAR}, #{businessEndDate,jdbcType=VARCHAR}, 
+      #{bulletinStartDate,jdbcType=VARCHAR}, #{showBusinessEndDate,jdbcType=VARCHAR}, 
+      #{originalPrice,jdbcType=INTEGER}, #{showOriginalPrice,jdbcType=VARCHAR}, #{makeCount,jdbcType=INTEGER}, 
+      #{isLock,jdbcType=VARCHAR}, #{isPause,jdbcType=VARCHAR}, #{businessValidDate,jdbcType=VARCHAR}, 
+      #{publicEndDate,jdbcType=VARCHAR}, #{publicvalidDate,jdbcType=VARCHAR}, #{appointRoleId,jdbcType=VARCHAR}, 
+      #{saleMethod,jdbcType=INTEGER}, #{highestPrice,jdbcType=INTEGER}, #{couponsCode,jdbcType=INTEGER}, 
+      #{callCount,jdbcType=INTEGER}, #{nextCallTime,jdbcType=VARCHAR}, #{updateLockTime,jdbcType=VARCHAR}, 
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtUpdate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.demo.domain.Role">
+    insert into role
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="icon != null">
+        Icon,
+      </if>
+      <if test="upgradeImmortal != null">
+        UpgradeImmortal,
+      </if>
+      <if test="upgradeMagic != null">
+        UpgradeMagic,
+      </if>
+      <if test="tao != null">
+        Tao,
+      </if>
+      <if test="decimalTao != null">
+        DecimalTao,
+      </if>
+      <if test="taoHtmlHelper != null">
+        TaoHtmlHelper,
+      </if>
+      <if test="con != null">
+        Con,
+      </if>
+      <if test="conHtmlHelper != null">
+        ConHtmlHelper,
+      </if>
+      <if test="wiz != null">
+        Wiz,
+      </if>
+      <if test="wizHtmlHelper != null">
+        WizHtmlHelper,
+      </if>
+      <if test="str != null">
+        Str,
+      </if>
+      <if test="strHtmlHelper != null">
+        StrHtmlHelper,
+      </if>
+      <if test="dex != null">
+        Dex,
+      </if>
+      <if test="dexHtmlHelper != null">
+        DexHtmlHelper,
+      </if>
+      <if test="serverCode != null">
+        ServerCode,
+      </if>
+      <if test="serverName != null">
+        ServerName,
+      </if>
+      <if test="areaCode != null">
+        AreaCode,
+      </if>
+      <if test="areaName != null">
+        AreaName,
+      </if>
+      <if test="itemName != null">
+        ItemName,
+      </if>
+      <if test="itemNameNum != null">
+        ItemNameNum,
+      </if>
+      <if test="itemNameColor != null">
+        ItemNameColor,
+      </if>
+      <if test="saleAccount != null">
+        SaleAccount,
+      </if>
+      <if test="saleRoelId != null">
+        SaleRoelId,
+      </if>
+      <if test="gameItemCode != null">
+        GameItemCode,
+      </if>
+      <if test="saleRoleName != null">
+        SaleRoleName,
+      </if>
+      <if test="itemTypeId != null">
+        ItemTypeId,
+      </if>
+      <if test="itemTypeIdThree != null">
+        ItemTypeIdThree,
+      </if>
+      <if test="itemTypeName != null">
+        ItemTypeName,
+      </if>
+      <if test="itemTypeP1Name != null">
+        ItemTypeP1Name,
+      </if>
+      <if test="itemXml != null">
+        ItemXml,
+      </if>
+      <if test="itemState != null">
+        ItemState,
+      </if>
+      <if test="itemStateDesc != null">
+        ItemStateDesc,
+      </if>
+      <if test="itemPreState != null">
+        ItemPreState,
+      </if>
+      <if test="itemImage != null">
+        ItemImage,
+      </if>
+      <if test="itemLevel != null">
+        ItemLevel,
+      </if>
+      <if test="salePriceStyle != null">
+        SalePriceStyle,
+      </if>
+      <if test="QBCookieValue != null">
+        QBCookieValue,
+      </if>
+      <if test="btnPic != null">
+        BtnPic,
+      </if>
+      <if test="unitPrice != null">
+        UnitPrice,
+      </if>
+      <if test="unitPriceInt != null">
+        UnitPriceInt,
+      </if>
+      <if test="oprate != null">
+        Oprate,
+      </if>
+      <if test="oprateHtml != null">
+        OprateHtml,
+      </if>
+      <if test="priceColorHtml != null">
+        PriceColorHtml,
+      </if>
+      <if test="currentStateName != null">
+        CurrentStateName,
+      </if>
+      <if test="originalStateName != null">
+        OriginalStateName,
+      </if>
+      <if test="itemImageName != null">
+        ItemImageName,
+      </if>
+      <if test="paymentDate != null">
+        PaymentDate,
+      </if>
+      <if test="showPaymentDate != null">
+        ShowPaymentDate,
+      </if>
+      <if test="orderState != null">
+        OrderState,
+      </if>
+      <if test="gpayOrderCode != null">
+        GpayOrderCode,
+      </if>
+      <if test="itemOrderCode != null">
+        ItemOrderCode,
+      </if>
+      <if test="currentState != null">
+        CurrentState,
+      </if>
+      <if test="stateName != null">
+        StateName,
+      </if>
+      <if test="itemInfoCode != null">
+        ItemInfoCode,
+      </if>
+      <if test="currentItemPrice != null">
+        CurrentItemPrice,
+      </if>
+      <if test="oldReservePrice != null">
+        OldReservePrice,
+      </if>
+      <if test="newReservePrice != null">
+        NewReservePrice,
+      </if>
+      <if test="showItemPrice != null">
+        ShowItemPrice,
+      </if>
+      <if test="showNewReservePrice != null">
+        ShowNewReservePrice,
+      </if>
+      <if test="showOldReservePrice != null">
+        ShowOldReservePrice,
+      </if>
+      <if test="publicStartDate != null">
+        PublicStartDate,
+      </if>
+      <if test="showPublicStartDate != null">
+        ShowPublicStartDate,
+      </if>
+      <if test="businessStartDate != null">
+        BusinessStartDate,
+      </if>
+      <if test="showBusinessStarDate != null">
+        ShowBusinessStarDate,
+      </if>
+      <if test="businessEndDate != null">
+        BusinessEndDate,
+      </if>
+      <if test="bulletinStartDate != null">
+        BulletinStartDate,
+      </if>
+      <if test="showBusinessEndDate != null">
+        ShowBusinessEndDate,
+      </if>
+      <if test="originalPrice != null">
+        OriginalPrice,
+      </if>
+      <if test="showOriginalPrice != null">
+        ShowOriginalPrice,
+      </if>
+      <if test="makeCount != null">
+        MakeCount,
+      </if>
+      <if test="isLock != null">
+        IsLock,
+      </if>
+      <if test="isPause != null">
+        IsPause,
+      </if>
+      <if test="businessValidDate != null">
+        BusinessValidDate,
+      </if>
+      <if test="publicEndDate != null">
+        PublicEndDate,
+      </if>
+      <if test="publicvalidDate != null">
+        PublicvalidDate,
+      </if>
+      <if test="appointRoleId != null">
+        AppointRoleId,
+      </if>
+      <if test="saleMethod != null">
+        SaleMethod,
+      </if>
+      <if test="highestPrice != null">
+        HighestPrice,
+      </if>
+      <if test="couponsCode != null">
+        CouponsCode,
+      </if>
+      <if test="callCount != null">
+        CallCount,
+      </if>
+      <if test="nextCallTime != null">
+        NextCallTime,
+      </if>
+      <if test="updateLockTime != null">
+        UpdateLockTime,
+      </if>
+      <if test="gmtCreate != null">
+        GmtCreate,
+      </if>
+      <if test="gmtUpdate != null">
+        GmtUpdate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="icon != null">
+        #{icon,jdbcType=INTEGER},
+      </if>
+      <if test="upgradeImmortal != null">
+        #{upgradeImmortal,jdbcType=INTEGER},
+      </if>
+      <if test="upgradeMagic != null">
+        #{upgradeMagic,jdbcType=INTEGER},
+      </if>
+      <if test="tao != null">
+        #{tao,jdbcType=INTEGER},
+      </if>
+      <if test="decimalTao != null">
+        #{decimalTao,jdbcType=DOUBLE},
+      </if>
+      <if test="taoHtmlHelper != null">
+        #{taoHtmlHelper,jdbcType=VARCHAR},
+      </if>
+      <if test="con != null">
+        #{con,jdbcType=INTEGER},
+      </if>
+      <if test="conHtmlHelper != null">
+        #{conHtmlHelper,jdbcType=INTEGER},
+      </if>
+      <if test="wiz != null">
+        #{wiz,jdbcType=INTEGER},
+      </if>
+      <if test="wizHtmlHelper != null">
+        #{wizHtmlHelper,jdbcType=INTEGER},
+      </if>
+      <if test="str != null">
+        #{str,jdbcType=INTEGER},
+      </if>
+      <if test="strHtmlHelper != null">
+        #{strHtmlHelper,jdbcType=INTEGER},
+      </if>
+      <if test="dex != null">
+        #{dex,jdbcType=INTEGER},
+      </if>
+      <if test="dexHtmlHelper != null">
+        #{dexHtmlHelper,jdbcType=INTEGER},
+      </if>
+      <if test="serverCode != null">
+        #{serverCode,jdbcType=INTEGER},
+      </if>
+      <if test="serverName != null">
+        #{serverName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null">
+        #{areaCode,jdbcType=INTEGER},
+      </if>
+      <if test="areaName != null">
+        #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemName != null">
+        #{itemName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemNameNum != null">
+        #{itemNameNum,jdbcType=VARCHAR},
+      </if>
+      <if test="itemNameColor != null">
+        #{itemNameColor,jdbcType=VARCHAR},
+      </if>
+      <if test="saleAccount != null">
+        #{saleAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="saleRoelId != null">
+        #{saleRoelId,jdbcType=VARCHAR},
+      </if>
+      <if test="gameItemCode != null">
+        #{gameItemCode,jdbcType=VARCHAR},
+      </if>
+      <if test="saleRoleName != null">
+        #{saleRoleName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemTypeId != null">
+        #{itemTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="itemTypeIdThree != null">
+        #{itemTypeIdThree,jdbcType=INTEGER},
+      </if>
+      <if test="itemTypeName != null">
+        #{itemTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemTypeP1Name != null">
+        #{itemTypeP1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="itemXml != null">
+        #{itemXml,jdbcType=VARCHAR},
+      </if>
+      <if test="itemState != null">
+        #{itemState,jdbcType=VARCHAR},
+      </if>
+      <if test="itemStateDesc != null">
+        #{itemStateDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="itemPreState != null">
+        #{itemPreState,jdbcType=VARCHAR},
+      </if>
+      <if test="itemImage != null">
+        #{itemImage,jdbcType=VARCHAR},
+      </if>
+      <if test="itemLevel != null">
+        #{itemLevel,jdbcType=INTEGER},
+      </if>
+      <if test="salePriceStyle != null">
+        #{salePriceStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="QBCookieValue != null">
+        #{QBCookieValue,jdbcType=VARCHAR},
+      </if>
+      <if test="btnPic != null">
+        #{btnPic,jdbcType=VARCHAR},
+      </if>
+      <if test="unitPrice != null">
+        #{unitPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="unitPriceInt != null">
+        #{unitPriceInt,jdbcType=INTEGER},
+      </if>
+      <if test="oprate != null">
+        #{oprate,jdbcType=INTEGER},
+      </if>
+      <if test="oprateHtml != null">
+        #{oprateHtml,jdbcType=VARCHAR},
+      </if>
+      <if test="priceColorHtml != null">
+        #{priceColorHtml,jdbcType=VARCHAR},
+      </if>
+      <if test="currentStateName != null">
+        #{currentStateName,jdbcType=VARCHAR},
+      </if>
+      <if test="originalStateName != null">
+        #{originalStateName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemImageName != null">
+        #{itemImageName,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentDate != null">
+        #{paymentDate,jdbcType=VARCHAR},
+      </if>
+      <if test="showPaymentDate != null">
+        #{showPaymentDate,jdbcType=VARCHAR},
+      </if>
+      <if test="orderState != null">
+        #{orderState,jdbcType=VARCHAR},
+      </if>
+      <if test="gpayOrderCode != null">
+        #{gpayOrderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrderCode != null">
+        #{itemOrderCode,jdbcType=INTEGER},
+      </if>
+      <if test="currentState != null">
+        #{currentState,jdbcType=VARCHAR},
+      </if>
+      <if test="stateName != null">
+        #{stateName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemInfoCode != null">
+        #{itemInfoCode,jdbcType=INTEGER},
+      </if>
+      <if test="currentItemPrice != null">
+        #{currentItemPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="oldReservePrice != null">
+        #{oldReservePrice,jdbcType=INTEGER},
+      </if>
+      <if test="newReservePrice != null">
+        #{newReservePrice,jdbcType=INTEGER},
+      </if>
+      <if test="showItemPrice != null">
+        #{showItemPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="showNewReservePrice != null">
+        #{showNewReservePrice,jdbcType=VARCHAR},
+      </if>
+      <if test="showOldReservePrice != null">
+        #{showOldReservePrice,jdbcType=VARCHAR},
+      </if>
+      <if test="publicStartDate != null">
+        #{publicStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="showPublicStartDate != null">
+        #{showPublicStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="businessStartDate != null">
+        #{businessStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="showBusinessStarDate != null">
+        #{showBusinessStarDate,jdbcType=VARCHAR},
+      </if>
+      <if test="businessEndDate != null">
+        #{businessEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="bulletinStartDate != null">
+        #{bulletinStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="showBusinessEndDate != null">
+        #{showBusinessEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="originalPrice != null">
+        #{originalPrice,jdbcType=INTEGER},
+      </if>
+      <if test="showOriginalPrice != null">
+        #{showOriginalPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="makeCount != null">
+        #{makeCount,jdbcType=INTEGER},
+      </if>
+      <if test="isLock != null">
+        #{isLock,jdbcType=VARCHAR},
+      </if>
+      <if test="isPause != null">
+        #{isPause,jdbcType=VARCHAR},
+      </if>
+      <if test="businessValidDate != null">
+        #{businessValidDate,jdbcType=VARCHAR},
+      </if>
+      <if test="publicEndDate != null">
+        #{publicEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="publicvalidDate != null">
+        #{publicvalidDate,jdbcType=VARCHAR},
+      </if>
+      <if test="appointRoleId != null">
+        #{appointRoleId,jdbcType=VARCHAR},
+      </if>
+      <if test="saleMethod != null">
+        #{saleMethod,jdbcType=INTEGER},
+      </if>
+      <if test="highestPrice != null">
+        #{highestPrice,jdbcType=INTEGER},
+      </if>
+      <if test="couponsCode != null">
+        #{couponsCode,jdbcType=INTEGER},
+      </if>
+      <if test="callCount != null">
+        #{callCount,jdbcType=INTEGER},
+      </if>
+      <if test="nextCallTime != null">
+        #{nextCallTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateLockTime != null">
+        #{updateLockTime,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtUpdate != null">
+        #{gmtUpdate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.domain.Role">
+    update role
+    <set>
+      <if test="upgradeImmortal != null">
+        UpgradeImmortal = #{upgradeImmortal,jdbcType=INTEGER},
+      </if>
+      <if test="upgradeMagic != null">
+        UpgradeMagic = #{upgradeMagic,jdbcType=INTEGER},
+      </if>
+      <if test="tao != null">
+        Tao = #{tao,jdbcType=INTEGER},
+      </if>
+      <if test="decimalTao != null">
+        DecimalTao = #{decimalTao,jdbcType=DOUBLE},
+      </if>
+      <if test="taoHtmlHelper != null">
+        TaoHtmlHelper = #{taoHtmlHelper,jdbcType=VARCHAR},
+      </if>
+      <if test="con != null">
+        Con = #{con,jdbcType=INTEGER},
+      </if>
+      <if test="conHtmlHelper != null">
+        ConHtmlHelper = #{conHtmlHelper,jdbcType=INTEGER},
+      </if>
+      <if test="wiz != null">
+        Wiz = #{wiz,jdbcType=INTEGER},
+      </if>
+      <if test="wizHtmlHelper != null">
+        WizHtmlHelper = #{wizHtmlHelper,jdbcType=INTEGER},
+      </if>
+      <if test="str != null">
+        Str = #{str,jdbcType=INTEGER},
+      </if>
+      <if test="strHtmlHelper != null">
+        StrHtmlHelper = #{strHtmlHelper,jdbcType=INTEGER},
+      </if>
+      <if test="dex != null">
+        Dex = #{dex,jdbcType=INTEGER},
+      </if>
+      <if test="dexHtmlHelper != null">
+        DexHtmlHelper = #{dexHtmlHelper,jdbcType=INTEGER},
+      </if>
+      <if test="serverCode != null">
+        ServerCode = #{serverCode,jdbcType=INTEGER},
+      </if>
+      <if test="serverName != null">
+        ServerName = #{serverName,jdbcType=VARCHAR},
+      </if>
+      <if test="areaCode != null">
+        AreaCode = #{areaCode,jdbcType=INTEGER},
+      </if>
+      <if test="areaName != null">
+        AreaName = #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemName != null">
+        ItemName = #{itemName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemNameNum != null">
+        ItemNameNum = #{itemNameNum,jdbcType=VARCHAR},
+      </if>
+      <if test="itemNameColor != null">
+        ItemNameColor = #{itemNameColor,jdbcType=VARCHAR},
+      </if>
+      <if test="saleAccount != null">
+        SaleAccount = #{saleAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="saleRoelId != null">
+        SaleRoelId = #{saleRoelId,jdbcType=VARCHAR},
+      </if>
+      <if test="gameItemCode != null">
+        GameItemCode = #{gameItemCode,jdbcType=VARCHAR},
+      </if>
+      <if test="saleRoleName != null">
+        SaleRoleName = #{saleRoleName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemTypeId != null">
+        ItemTypeId = #{itemTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="itemTypeIdThree != null">
+        ItemTypeIdThree = #{itemTypeIdThree,jdbcType=INTEGER},
+      </if>
+      <if test="itemTypeName != null">
+        ItemTypeName = #{itemTypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemTypeP1Name != null">
+        ItemTypeP1Name = #{itemTypeP1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="itemXml != null">
+        ItemXml = #{itemXml,jdbcType=VARCHAR},
+      </if>
+      <if test="itemState != null">
+        ItemState = #{itemState,jdbcType=VARCHAR},
+      </if>
+      <if test="itemStateDesc != null">
+        ItemStateDesc = #{itemStateDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="itemPreState != null">
+        ItemPreState = #{itemPreState,jdbcType=VARCHAR},
+      </if>
+      <if test="itemImage != null">
+        ItemImage = #{itemImage,jdbcType=VARCHAR},
+      </if>
+      <if test="itemLevel != null">
+        ItemLevel = #{itemLevel,jdbcType=INTEGER},
+      </if>
+      <if test="salePriceStyle != null">
+        SalePriceStyle = #{salePriceStyle,jdbcType=VARCHAR},
+      </if>
+      <if test="QBCookieValue != null">
+        QBCookieValue = #{QBCookieValue,jdbcType=VARCHAR},
+      </if>
+      <if test="btnPic != null">
+        BtnPic = #{btnPic,jdbcType=VARCHAR},
+      </if>
+      <if test="unitPrice != null">
+        UnitPrice = #{unitPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="unitPriceInt != null">
+        UnitPriceInt = #{unitPriceInt,jdbcType=INTEGER},
+      </if>
+      <if test="oprate != null">
+        Oprate = #{oprate,jdbcType=INTEGER},
+      </if>
+      <if test="oprateHtml != null">
+        OprateHtml = #{oprateHtml,jdbcType=VARCHAR},
+      </if>
+      <if test="priceColorHtml != null">
+        PriceColorHtml = #{priceColorHtml,jdbcType=VARCHAR},
+      </if>
+      <if test="currentStateName != null">
+        CurrentStateName = #{currentStateName,jdbcType=VARCHAR},
+      </if>
+      <if test="originalStateName != null">
+        OriginalStateName = #{originalStateName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemImageName != null">
+        ItemImageName = #{itemImageName,jdbcType=VARCHAR},
+      </if>
+      <if test="paymentDate != null">
+        PaymentDate = #{paymentDate,jdbcType=VARCHAR},
+      </if>
+      <if test="showPaymentDate != null">
+        ShowPaymentDate = #{showPaymentDate,jdbcType=VARCHAR},
+      </if>
+      <if test="orderState != null">
+        OrderState = #{orderState,jdbcType=VARCHAR},
+      </if>
+      <if test="gpayOrderCode != null">
+        GpayOrderCode = #{gpayOrderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrderCode != null">
+        ItemOrderCode = #{itemOrderCode,jdbcType=INTEGER},
+      </if>
+      <if test="currentState != null">
+        CurrentState = #{currentState,jdbcType=VARCHAR},
+      </if>
+      <if test="stateName != null">
+        StateName = #{stateName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemInfoCode != null">
+        ItemInfoCode = #{itemInfoCode,jdbcType=INTEGER},
+      </if>
+      <if test="currentItemPrice != null">
+        CurrentItemPrice = #{currentItemPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="oldReservePrice != null">
+        OldReservePrice = #{oldReservePrice,jdbcType=INTEGER},
+      </if>
+      <if test="newReservePrice != null">
+        NewReservePrice = #{newReservePrice,jdbcType=INTEGER},
+      </if>
+      <if test="showItemPrice != null">
+        ShowItemPrice = #{showItemPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="showNewReservePrice != null">
+        ShowNewReservePrice = #{showNewReservePrice,jdbcType=VARCHAR},
+      </if>
+      <if test="showOldReservePrice != null">
+        ShowOldReservePrice = #{showOldReservePrice,jdbcType=VARCHAR},
+      </if>
+      <if test="publicStartDate != null">
+        PublicStartDate = #{publicStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="showPublicStartDate != null">
+        ShowPublicStartDate = #{showPublicStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="businessStartDate != null">
+        BusinessStartDate = #{businessStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="showBusinessStarDate != null">
+        ShowBusinessStarDate = #{showBusinessStarDate,jdbcType=VARCHAR},
+      </if>
+      <if test="businessEndDate != null">
+        BusinessEndDate = #{businessEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="bulletinStartDate != null">
+        BulletinStartDate = #{bulletinStartDate,jdbcType=VARCHAR},
+      </if>
+      <if test="showBusinessEndDate != null">
+        ShowBusinessEndDate = #{showBusinessEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="originalPrice != null">
+        OriginalPrice = #{originalPrice,jdbcType=INTEGER},
+      </if>
+      <if test="showOriginalPrice != null">
+        ShowOriginalPrice = #{showOriginalPrice,jdbcType=VARCHAR},
+      </if>
+      <if test="makeCount != null">
+        MakeCount = #{makeCount,jdbcType=INTEGER},
+      </if>
+      <if test="isLock != null">
+        IsLock = #{isLock,jdbcType=VARCHAR},
+      </if>
+      <if test="isPause != null">
+        IsPause = #{isPause,jdbcType=VARCHAR},
+      </if>
+      <if test="businessValidDate != null">
+        BusinessValidDate = #{businessValidDate,jdbcType=VARCHAR},
+      </if>
+      <if test="publicEndDate != null">
+        PublicEndDate = #{publicEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="publicvalidDate != null">
+        PublicvalidDate = #{publicvalidDate,jdbcType=VARCHAR},
+      </if>
+      <if test="appointRoleId != null">
+        AppointRoleId = #{appointRoleId,jdbcType=VARCHAR},
+      </if>
+      <if test="saleMethod != null">
+        SaleMethod = #{saleMethod,jdbcType=INTEGER},
+      </if>
+      <if test="highestPrice != null">
+        HighestPrice = #{highestPrice,jdbcType=INTEGER},
+      </if>
+      <if test="couponsCode != null">
+        CouponsCode = #{couponsCode,jdbcType=INTEGER},
+      </if>
+      <if test="callCount != null">
+        CallCount = #{callCount,jdbcType=INTEGER},
+      </if>
+      <if test="nextCallTime != null">
+        NextCallTime = #{nextCallTime,jdbcType=VARCHAR},
+      </if>
+      <if test="updateLockTime != null">
+        UpdateLockTime = #{updateLockTime,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        GmtCreate = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtUpdate != null">
+        GmtUpdate = #{gmtUpdate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where Icon = #{icon,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.demo.domain.Role">
+    update role
+    set UpgradeImmortal = #{upgradeImmortal,jdbcType=INTEGER},
+      UpgradeMagic = #{upgradeMagic,jdbcType=INTEGER},
+      Tao = #{tao,jdbcType=INTEGER},
+      DecimalTao = #{decimalTao,jdbcType=DOUBLE},
+      TaoHtmlHelper = #{taoHtmlHelper,jdbcType=VARCHAR},
+      Con = #{con,jdbcType=INTEGER},
+      ConHtmlHelper = #{conHtmlHelper,jdbcType=INTEGER},
+      Wiz = #{wiz,jdbcType=INTEGER},
+      WizHtmlHelper = #{wizHtmlHelper,jdbcType=INTEGER},
+      Str = #{str,jdbcType=INTEGER},
+      StrHtmlHelper = #{strHtmlHelper,jdbcType=INTEGER},
+      Dex = #{dex,jdbcType=INTEGER},
+      DexHtmlHelper = #{dexHtmlHelper,jdbcType=INTEGER},
+      ServerCode = #{serverCode,jdbcType=INTEGER},
+      ServerName = #{serverName,jdbcType=VARCHAR},
+      AreaCode = #{areaCode,jdbcType=INTEGER},
+      AreaName = #{areaName,jdbcType=VARCHAR},
+      ItemName = #{itemName,jdbcType=VARCHAR},
+      ItemNameNum = #{itemNameNum,jdbcType=VARCHAR},
+      ItemNameColor = #{itemNameColor,jdbcType=VARCHAR},
+      SaleAccount = #{saleAccount,jdbcType=VARCHAR},
+      SaleRoelId = #{saleRoelId,jdbcType=VARCHAR},
+      GameItemCode = #{gameItemCode,jdbcType=VARCHAR},
+      SaleRoleName = #{saleRoleName,jdbcType=VARCHAR},
+      ItemTypeId = #{itemTypeId,jdbcType=INTEGER},
+      ItemTypeIdThree = #{itemTypeIdThree,jdbcType=INTEGER},
+      ItemTypeName = #{itemTypeName,jdbcType=VARCHAR},
+      ItemTypeP1Name = #{itemTypeP1Name,jdbcType=VARCHAR},
+      ItemXml = #{itemXml,jdbcType=VARCHAR},
+      ItemState = #{itemState,jdbcType=VARCHAR},
+      ItemStateDesc = #{itemStateDesc,jdbcType=VARCHAR},
+      ItemPreState = #{itemPreState,jdbcType=VARCHAR},
+      ItemImage = #{itemImage,jdbcType=VARCHAR},
+      ItemLevel = #{itemLevel,jdbcType=INTEGER},
+      SalePriceStyle = #{salePriceStyle,jdbcType=VARCHAR},
+      QBCookieValue = #{QBCookieValue,jdbcType=VARCHAR},
+      BtnPic = #{btnPic,jdbcType=VARCHAR},
+      UnitPrice = #{unitPrice,jdbcType=VARCHAR},
+      UnitPriceInt = #{unitPriceInt,jdbcType=INTEGER},
+      Oprate = #{oprate,jdbcType=INTEGER},
+      OprateHtml = #{oprateHtml,jdbcType=VARCHAR},
+      PriceColorHtml = #{priceColorHtml,jdbcType=VARCHAR},
+      CurrentStateName = #{currentStateName,jdbcType=VARCHAR},
+      OriginalStateName = #{originalStateName,jdbcType=VARCHAR},
+      ItemImageName = #{itemImageName,jdbcType=VARCHAR},
+      PaymentDate = #{paymentDate,jdbcType=VARCHAR},
+      ShowPaymentDate = #{showPaymentDate,jdbcType=VARCHAR},
+      OrderState = #{orderState,jdbcType=VARCHAR},
+      GpayOrderCode = #{gpayOrderCode,jdbcType=VARCHAR},
+      ItemOrderCode = #{itemOrderCode,jdbcType=INTEGER},
+      CurrentState = #{currentState,jdbcType=VARCHAR},
+      StateName = #{stateName,jdbcType=VARCHAR},
+      ItemInfoCode = #{itemInfoCode,jdbcType=INTEGER},
+      CurrentItemPrice = #{currentItemPrice,jdbcType=DOUBLE},
+      OldReservePrice = #{oldReservePrice,jdbcType=INTEGER},
+      NewReservePrice = #{newReservePrice,jdbcType=INTEGER},
+      ShowItemPrice = #{showItemPrice,jdbcType=VARCHAR},
+      ShowNewReservePrice = #{showNewReservePrice,jdbcType=VARCHAR},
+      ShowOldReservePrice = #{showOldReservePrice,jdbcType=VARCHAR},
+      PublicStartDate = #{publicStartDate,jdbcType=VARCHAR},
+      ShowPublicStartDate = #{showPublicStartDate,jdbcType=VARCHAR},
+      BusinessStartDate = #{businessStartDate,jdbcType=VARCHAR},
+      ShowBusinessStarDate = #{showBusinessStarDate,jdbcType=VARCHAR},
+      BusinessEndDate = #{businessEndDate,jdbcType=VARCHAR},
+      BulletinStartDate = #{bulletinStartDate,jdbcType=VARCHAR},
+      ShowBusinessEndDate = #{showBusinessEndDate,jdbcType=VARCHAR},
+      OriginalPrice = #{originalPrice,jdbcType=INTEGER},
+      ShowOriginalPrice = #{showOriginalPrice,jdbcType=VARCHAR},
+      MakeCount = #{makeCount,jdbcType=INTEGER},
+      IsLock = #{isLock,jdbcType=VARCHAR},
+      IsPause = #{isPause,jdbcType=VARCHAR},
+      BusinessValidDate = #{businessValidDate,jdbcType=VARCHAR},
+      PublicEndDate = #{publicEndDate,jdbcType=VARCHAR},
+      PublicvalidDate = #{publicvalidDate,jdbcType=VARCHAR},
+      AppointRoleId = #{appointRoleId,jdbcType=VARCHAR},
+      SaleMethod = #{saleMethod,jdbcType=INTEGER},
+      HighestPrice = #{highestPrice,jdbcType=INTEGER},
+      CouponsCode = #{couponsCode,jdbcType=INTEGER},
+      CallCount = #{callCount,jdbcType=INTEGER},
+      NextCallTime = #{nextCallTime,jdbcType=VARCHAR},
+      UpdateLockTime = #{updateLockTime,jdbcType=VARCHAR},
+      GmtCreate = #{gmtCreate,jdbcType=TIMESTAMP},
+      GmtUpdate = #{gmtUpdate,jdbcType=TIMESTAMP}
+    where Icon = #{icon,jdbcType=INTEGER}
+  </update>
+</mapper>
