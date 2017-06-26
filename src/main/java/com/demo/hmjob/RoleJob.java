@@ -15,7 +15,6 @@ import com.demo.dao.RoleDAO;
 import com.demo.dao.ServerDAO;
 import com.demo.domain.Role;
 import com.demo.domain.Server;
-import com.demo.util.ChacterTypeUtil;
 import com.demo.util.HttpUtils;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
